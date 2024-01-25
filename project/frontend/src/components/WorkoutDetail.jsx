@@ -42,7 +42,9 @@ const WorkoutDetail = ({ workout }) => {
   }
 
   return (
-    <div className="workoutDetails">
+      <div className="workoutDetails">
+      <div className="detContainer">
+      <div className="details">
       <h4>{workout.title}</h4>
       <p>
         <strong>Load (Kg): </strong>
@@ -53,8 +55,11 @@ const WorkoutDetail = ({ workout }) => {
         {workout.reps}
       </p>
       <p>{formatDistanceToNow(parseISO(workout.createdAt), { addSuffix: true })}</p>
+    </div>
+     <div className="buttons">
       <span onClick={handleClick}>Delete</span>
-      <button onClick={handleEdit}>Edit</button>
+        <button onClick={handleEdit}>Edit</button>
+     </div>
 
        {/* Render the modal when isEditing is true */}
       {isEditing && (
@@ -63,6 +68,7 @@ const WorkoutDetail = ({ workout }) => {
           onClose={refetchData} // Pass a function to close the modal
         />
       )}
+      </div>
     </div>
   );
 };

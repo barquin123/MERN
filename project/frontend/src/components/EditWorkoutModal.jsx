@@ -56,17 +56,21 @@ const EditWorkoutModal = ({ workout, onClose }) => {
 
   return (
     <div className="modal">
-      <h3>Edit Workout</h3>
-      <label>Title</label>
-      <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
-      <label>Load (Kg)</label>
-      <input type="number" name="load" value={formData.load} onChange={handleInputChange} />
-      <label>Reps</label>
-      <input type="number" name="reps" value={formData.reps} onChange={handleInputChange} />
-      {/* Preserve the original createdAt value */}
-      <input type="hidden" name="createdAt" value={formData.createdAt} />
-      <button onClick={handleUpdate}>OK</button>
-      <button onClick={onClose}>Cancel</button>
+      <div className="modlaContainer">
+        <h3>Edit Workout</h3>
+        <label>Title</label>
+        <input type="text" name="title" value={formData.title} onChange={handleInputChange} />
+        <label>Load (Kg)</label>
+        <input type="number" name="load" value={formData.load} onChange={handleInputChange} />
+        <label>Reps</label>
+        <input type="number" name="reps" value={formData.reps} onChange={handleInputChange} />
+        {/* Preserve the original createdAt value */}
+        <input type="hidden" name="createdAt" value={formData.createdAt} />
+        <div className="Modbuttons">
+        <button onClick={handleUpdate}>OK</button>
+        <button onClick={onClose}>Cancel</button>
+        </div>
+      </div>
     </div>
   ) 
 } 

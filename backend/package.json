@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm install",
     "dev": "nodemon server.js",
     "build": "npm i"
   },

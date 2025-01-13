@@ -9,7 +9,7 @@ const TaskList = ({assignedTo, taskDetailsName, createdAt, taskDetailsLink, assi
     // if(!admin){
     //   return
     // }
-    setAdmin(true);
+    setAdmin(false);
   }, [admin])
 
   const handleSelectStatus = (e) =>{
@@ -20,21 +20,37 @@ const TaskList = ({assignedTo, taskDetailsName, createdAt, taskDetailsLink, assi
     <tbody>
                   {admin ? (
                   <tr>
-                    <td>{TaskName}</td>
-                    <td>{assignedBy}</td>
-                    <td>{assignedTo}</td>
+                    <td>
+                      <input 
+                      type="text" 
+                      name="taskName" 
+                      placeholder="taskName" 
+                      id="taskName" />
+                    </td>
+                    <td>
+                      <input 
+                        type="text" 
+                        name="assignedBy" 
+                        placeholder="assignedBy" 
+                        id="assignedBy" />
+                    </td>
+                    <td>
+                      <input 
+                        type="text" 
+                        name="assignedTo"
+                        placeholder='assignedTo' 
+                        id="assignedTo" />
+                    </td>
                     <td><Link className='w-full block' to={taskDetailsLink}>{taskDetailsName}</Link></td>
                     <td>
-                      <select value = {status} onChange={handleSelectStatus}>
-                      <option value="Pending">Pending</option> 
-                      <option value="In Progress">In Progress</option> 
-                      <option value="Completed">Completed</option> 
+                      <select value = {status} onChange={handleSelectStatus} disabled>
                       </select>
                     </td>
                     <td>{createdAt}</td>
                     </tr>
                   ):(
                     <tr>
+                    <td>{TaskName}</td>
                     <td>{assignedBy}</td>
                     <td>{assignedTo}</td>
                     <td><Link className='w-full block' to={taskDetailsLink}>{taskDetailsName}</Link></td>

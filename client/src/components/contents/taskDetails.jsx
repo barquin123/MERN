@@ -3,7 +3,6 @@ const TaskDetails = () => {
   const assignedTo = 'John Doe'
   const taskDetailsName = 'Mao ni ang task kamatay'
   const createdAt = '2021-09-01'
-  const taskDetailsLink = '/taskdetails/1'
   const assignedBy = 'Jane Doe'
   const TaskName = 'Task 1'
   return (
